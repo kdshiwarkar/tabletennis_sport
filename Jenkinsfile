@@ -46,7 +46,7 @@ pipeline {
         
          stage('Copy war file to container') {
             steps {
-              sh 'docker cp /home/kunalshiwarkar/.jenkins/workspace/tabletennis_sport/tabletennis_sport.war kunalcont1:/opt/download/apache-tomcat-9.0.91/webapps'
+              sh 'docker cp /home/kunalshiwarkar/.jenkins/workspace/tabletennis/target/tabletennis_sport.war kunalcont1:/opt/download/apache-tomcat-9.0.91/webapps'
          }
         }
 
