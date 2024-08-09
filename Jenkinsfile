@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'cp target/tabletennis_sport.war /home/kunalshiwarkar/.jenkins/workspace/tabletennis/target'
+                sh 'cp target/tabletennis_sport.war /home/kunalshiwarkar/.jenkins/workspace/tabletennis/target/tabletennis_sport.war'
             }
          }
         stage('docker build') {
