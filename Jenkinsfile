@@ -14,9 +14,10 @@ pipeline {
         }
         stage('Deployment') {
             steps {
+                sh 'mkdir -p /home/kunalshiwarkar/.jenkins/workspace/tabletennis_sport'
                 sh 'cp target/tabletennis_sport.war /home/kunalshiwarkar/.jenkins/workspace/tabletennis_sport/tabletennis_sport.war'
             }
-         }
+        }
         stage('docker build') {
             steps {
                 sh 'docker build -t kunalsh/kunal_image1 .'
