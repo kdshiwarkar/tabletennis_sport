@@ -19,12 +19,12 @@ RUN apt-get update
 RUN apt-get install -y wget
 
 # download tomcat,maven,java
-RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.91/bin/apache-tomcat-9.0.91.tar.gz
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.tar.gz
 RUN wget https://dlcdn.apache.org/maven/maven-3/3.9.8/binaries/apache-maven-3.9.8-bin.tar.gz
 RUN wget https://download.oracle.com/java/22/latest/jdk-22_linux-x64_bin.tar.gz
 
 # extract tar file 
-RUN tar -xvf apache-tomcat-9.0.91.tar.gz 
+RUN tar -xvf apache-tomcat-9.0.93.tar.gz 
 RUN tar -xvf apache-maven-3.9.8-bin.tar.gz  
 RUN tar -xvf jdk-22_linux-x64_bin.tar.gz 
 
