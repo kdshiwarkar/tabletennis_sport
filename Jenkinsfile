@@ -20,12 +20,12 @@ pipeline {
         }
         stage('docker build') {
             steps {
-                sh 'docker build -t kunalsh/kunal_image24 .'
+                sh 'docker build -t kunalsh/kunal_image25 .'
             }
         }
         stage('tag to given image') {
             steps {
-                sh 'docker tag kunalsh/kunal_image24 docker.io/kunalsh/kunal_image24:latest'
+                sh 'docker tag kunalsh/kunal_image25 docker.io/kunalsh/kunal_image25:latest'
             }
         } 
         stage ('docker login') {
@@ -35,19 +35,19 @@ pipeline {
         }
         stage('Push to Docker Hub') {
            steps {
-              sh 'docker push docker.io/kunalsh/kunal_image24:latest'
+              sh 'docker push docker.io/kunalsh/kunal_image25:latest'
          }
         }
       
         stage('Container creation') {
             steps {
-                sh 'docker run -it -d --name=kunalcont24 -p 240497:8080 docker.io/kunalsh/kunal_image24:latest /bin/bash'
+                sh 'docker run -it -d --name=kunalcont2404 -p 1307:8080 docker.io/kunalsh/kunal_image25:latest /bin/bash'
             }
         }
         
          stage('Copy war file to container') {
             steps {
-              sh 'docker cp /home/kunalshiwarkar/.jenkins/workspace/tabletennis_sport/tabletennis_sport.war kunalcont24:/opt/download/apache-tomcat-9.0.93/webapps'
+              sh 'docker cp /home/kunalshiwarkar/.jenkins/workspace/tabletennis_sport/tabletennis_sport.war kunalcont2404:/opt/download/apache-tomcat-9.0.93/webapps'
          }
         }    
     }
